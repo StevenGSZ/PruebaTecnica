@@ -1,0 +1,22 @@
+﻿.barra {
+    background: #2C508D;
+    padding-left: 15px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+}
+.barra h4{
+    padding: 0;
+    margin: 0;
+}
+.barra a{
+    color: #FFFFFF !important;
+    font-size: 26px
+}
+.container dl{
+    border-radius: 10px;
+    border: 1px solid #5B5B5B;
+    padding: 10px;
+}

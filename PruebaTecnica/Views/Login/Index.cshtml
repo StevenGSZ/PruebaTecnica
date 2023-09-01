@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <form asp-controller="Login" asp-action="IniciarSesion" method="post" class="col-md-4 formularioLog">
+            <div>
+                <label class="form-label" for="correo">Correo Electrónico:</label>
+                <input class="form-control" type="email" id="correo" name="correo" required />
+            </div>
+            <div>
+                <label class="form-label" for="contra">Contraseña:</label>
+                <input class="form-control" type="password" id="contra" name="contra" required />
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </form>
+    </div>
+</body>
+</html>

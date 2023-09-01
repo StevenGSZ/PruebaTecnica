@@ -1,0 +1,95 @@
+﻿@model IEnumerable<PruebaTecnica.Models.Solicitude>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="~/css/solicitud.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="barra">
+        <h4>Detalles de Solicitudes</h4>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i></a>
+    </div>
+    <div class="container">
+        <br/>
+        <p>
+            <a asp-action="Create" class="btn btn-success">Solicitar</a>
+        </p>
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Departament)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Application)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.StartDate)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.FinalDate)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Departament)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Application)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FinalDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.IdSolicitud">Leer</a>
+                            @if (item.Estado == "" || item.Estado == null)
+                            {
+                                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.IdSolicitud">Responder</a>
+                            }
+                           
+                            <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IdSolicitud">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

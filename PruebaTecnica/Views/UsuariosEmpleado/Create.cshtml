@@ -1,0 +1,95 @@
+﻿@model PruebaTecnica.Models.ViewModels.UsuarioVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="~/css/user.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="barra">
+        <h4>Agregar nuevo Usuario</h4>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i></a>
+    </div>
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col">
+                            <label asp-for="obUsuario.Email" class="control-label"></label>
+                            <input asp-for="obUsuario.Email" class="form-control" required />
+                            <span asp-validation-for="obUsuario.Email" class="text-danger"></span>
+                        </div>
+                        <div class="col">
+                            <label asp-for="obUsuario.Pass" class="control-label"></label>
+                            <input type="password" asp-for="obUsuario.Pass" class="form-control" required />
+                            <span asp-validation-for="obUsuario.Pass" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label asp-for="obUsuario.Name" class="control-label"></label>
+                            <input asp-for="obUsuario.Name" class="form-control" required />
+                            <span asp-validation-for="obUsuario.Name" class="text-danger"></span>
+                        </div>
+                        <div class="col">
+                            <label asp-for="obUsuario.Lastname" class="control-label"></label>
+                            <input asp-for="obUsuario.Lastname" class="form-control" required />
+                            <span asp-validation-for="obUsuario.Lastname" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="obUsuario.Phone" class="control-label"></label>
+                        <input asp-for="obUsuario.Phone" class="form-control" required />
+                        <span asp-validation-for="obUsuario.Phone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="obUsuario.City" class="control-label"></label>
+                        <input asp-for="obUsuario.City" class="form-control" required />
+                        <span asp-validation-for="obUsuario.City" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="obUsuario.Country" class="control-label"></label>
+                        <input asp-for="obUsuario.Country" class="form-control" required />
+                        <span asp-validation-for="obUsuario.Country" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Departamento</label>
+                        <select asp-for="obUsuario.IdDepartamento" class="form-control" asp-items="@Model.obListaDepartamento" required>
+                            <option selected disabled>--seleccionar departamento--</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputState" class="form-label">Tipo</label>
+                        <select asp-for="obUsuario.Tipo" id="inputState" class="form-select" required>
+                            <option selected>empleado</option>
+                        </select>
+                        <span asp-validation-for="obUsuario.Tipo" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

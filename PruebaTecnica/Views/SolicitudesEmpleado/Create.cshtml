@@ -1,0 +1,83 @@
+﻿@model PruebaTecnica.Models.Solicitude
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="~/css/solicitud.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="barra">
+        <h4>Haz una Solicitud</h4>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i></a>
+    </div>
+    <div class="container">
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="col">
+                            <label asp-for="Departament" class="control-label"></label>
+                            <input asp-for="Departament" class="form-control" />
+                            <span asp-validation-for="Departament" class="text-danger"></span>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Email (asegurate de escribir tu correo)</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Application" class="control-label"></label>
+                        <input asp-for="Application" class="form-control" />
+                        <span asp-validation-for="Application" class="text-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label asp-for="StartDate" class="control-label"></label>
+                            <input type="date" asp-for="StartDate" class="form-control" />
+                            <span asp-validation-for="StartDate" class="text-danger"></span>
+                        </div>
+                        <div class="col">
+                            <label asp-for="FinalDate" class="control-label"></label>
+                            <input type="date" asp-for="FinalDate" class="form-control" />
+                            <span asp-validation-for="FinalDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <input type="submit" value="Solicitar" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

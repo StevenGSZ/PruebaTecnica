@@ -1,0 +1,46 @@
+﻿.salir{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+.cartas{
+    display: flex;
+    justify-content: space-around;
+}
+.card1 {
+    width: 20rem;
+    background: #1F7AD8;
+    font-size: 110%;
+}
+
+.card2 {
+    width: 20rem;
+    background: #25D6A6;
+    font-size: 110%;
+}
+
+.card3 {
+    width: 20rem;
+    background: #8D6EE4;
+    font-size: 110%;
+}
+.card-title{
+    font-size: 200%;
+}
+.card-text a{
+    text-decoration: none;
+    color: white !important;
+}
+
+.container .perfil {
+    border-radius: 10px;
+    border: 1px solid #298DD6;
+}
+.container .perfil .titulo{
+    background: #298DD6;
+    padding: 5px;
+    color: white;
+}
+.container .perfil dl{
+    padding: 10px;
+}

@@ -1,0 +1,115 @@
+﻿@model PruebaTecnica.Models.ViewModels.ConsultasVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <br/>
+    <br />
+    <div class="cartas">
+        @if (Model.InfoUsuario.Tipo == "admin")
+        {
+            <div class="card card1 text-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">Solicitudes</div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @Model.TotalSolicitud
+                    </h5>
+                    <p class="card-text"><a asp-controller="Solicitudes" asp-action="Index">Mas informacion</a></p>
+                </div>
+            </div>
+            <div class="card card2 text-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">Departamentos</div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @Model.TotalDepartament
+                    </h5>
+                    <p class="card-text"><a asp-controller="Departamentoes" asp-action="Index">Mas informacion</a></p>
+                </div>
+            </div>
+            <div class="card card3 text-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">Empleados</div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @Model.TotalUser
+                    </h5>
+                    <p class="card-text"><a asp-controller="Usuarios" asp-action="Index">Mas informacion</a></p>
+                </div>
+            </div>
+        }
+        @if (Model.InfoUsuario.Tipo == "rrhh")
+        {
+            <div class="card card1 text-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">Solicitudes</div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @Model.TotalSolicitud
+                    </h5>
+                    <p class="card-text"><a asp-controller="Solicitudes" asp-action="Index">Mas informacion</a></p>
+                </div>
+            </div>
+            
+            <div class="card card3 text-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">Empleados</div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @Model.TotalUser
+                    </h5>
+                    <p class="card-text"><a asp-controller="UsuariosEmpleado" asp-action="Index">Mas informacion</a></p>
+                </div>
+            </div>
+        }
+        @if (Model.InfoUsuario.Tipo == "empleado")
+        {
+            <div class="perfil">
+                <div class="titulo"><h4>Mi Perfil</h4></div>
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InfoUsuario.Email)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InfoUsuario.Email)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InfoUsuario.Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InfoUsuario.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InfoUsuario.Lastname)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InfoUsuario.Lastname)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InfoUsuario.Phone)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InfoUsuario.Phone)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InfoUsuario.City)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InfoUsuario.City)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InfoUsuario.Country)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InfoUsuario.Country)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InfoUsuario.Tipo)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InfoUsuario.Tipo)
+                    </dd>
+                </dl>
+            </div>
+            
+        }
+        
+    </div>
+</div>
